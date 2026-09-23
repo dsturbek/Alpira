@@ -1,0 +1,44 @@
+name: Provjera
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  tipovi:
+    name: Provjera tipova
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            backend/package-lock.json
+            frontend/package-lock.json
+
+      - name: Backend — instalacija
+        working-directory: backend
+        run: npm ci
+
+      - name: Backend — provjera tipova
+        working-directory: backend
+        run: npx tsc --noEmit
+
+      - name: Frontend — instalacija
+        working-directory: frontend
+        run: npm ci
+
+      # next-env.d.ts nije u repozitoriju jer ga Next generira sam,
+      # pa ga ovdje treba stvoriti prije provjere tipova.
+      - name: Frontend — generiranje Next tipova
+        working-directory: frontend
+        run: npx next typegen
+
+      - name: Frontend — provjera tipova
+        working-directory: frontend
+        run: npm run provjeri-tipove
