@@ -1,0 +1,11 @@
+# Sve tekstualne datoteke u repozitoriju drže LF završetke redaka.
+# Windows uređivači i dalje rade normalno; LF je bitan za skripte i
+# datoteke koje čita Docker container, gdje CRLF puca.
+* text=auto eol=lf
+
+# Binarne datoteke Git ne dira.
+*.png binary
+*.jpg binary
+*.pdf binary
+*.docx binary
+*.mwb binary

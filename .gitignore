@@ -1,0 +1,12 @@
+node_modules/
+dist/
+
+# Tajne — nikad u repozitorij. Uzorak je .env.example.
+.env
+.env.local
+
+*.log
+npm-debug.log*
+
+.DS_Store
+Thumbs.db

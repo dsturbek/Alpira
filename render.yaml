@@ -1,0 +1,32 @@
+services:
+  - type: web
+    name: alpira-backend
+    runtime: node
+    rootDir: backend
+    plan: free
+    buildCommand: npm install --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/zdravlje
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_TAJNA
+        sync: false
+      - key: DOPUSTENO_PODRIJETLO
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_LOZINKA
+        sync: false
+      - key: SMTP_HOST
+        sync: false
+      - key: SMTP_KORISNIK
+        sync: false
+      - key: SMTP_LOZINKA
+        sync: false
+      - key: SMTP_POSILJATELJ
+        sync: false
+      - key: BREVO_API_KEY
+        sync: false
