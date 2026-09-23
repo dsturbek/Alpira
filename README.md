@@ -1,5 +1,7 @@
 # Alpira
 
+[![Provjera](https://github.com/dsturbek/Alpira/actions/workflows/provjera.yml/badge.svg)](https://github.com/dsturbek/Alpira/actions/workflows/provjera.yml)
+
 Web aplikacija za organizirane planinarske izlete. Vodiči objavljuju termine
 izleta po rutama, sudionici se prijavljuju, a vodič svaku prijavu potvrđuje
 ili odbija. Nakon izleta sudionici mogu ostaviti recenziju.
