@@ -7,6 +7,28 @@ ili odbija. Nakon izleta sudionici mogu ostaviti recenziju.
 Praktični dio završnog rada "Usporedba metoda autentikacije i autorizacije
 za web aplikacije i servise" (FOI, 2026).
 
+**Aplikacija je živa na [alpira.vercel.app](https://alpira.vercel.app).**
+Poslužiteljski dio vrti se na besplatnom planu koji uspava neaktivne servise,
+pa prvo otvaranje zna potrajati tridesetak sekundi dok se baza ne probudi.
+Nakon toga radi normalno.
+
+![Naslovnica](docs/slike/naslovnica.jpg)
+
+## Kako izgleda
+
+Katalog ruta s filtrom po težini i nazivu:
+
+![Katalog ruta](docs/slike/rute.jpg)
+
+Raspored polazaka, grupiran po mjesecima:
+
+![Raspored polazaka](docs/slike/raspored.jpg)
+
+Prijava — lozinkom ili Google računom, a ako je uključen TOTP, slijedi još
+jedan korak s kodom:
+
+![Prijava](docs/slike/prijava.jpg)
+
 ## Tehnologije
 
 - Backend: Node.js, Express, TypeScript, PostgreSQL
